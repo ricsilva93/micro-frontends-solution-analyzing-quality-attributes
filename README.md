@@ -1,0 +1,1 @@
+# micro-frontends-solution-analyzing-quality-attributes
