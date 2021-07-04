@@ -63,7 +63,7 @@ after running and configuring sonarqube, install sonar-scanner-cli and then run:
 (example using .bat)<br>
 `sonar-scanner.bat -D"sonar.projectKey=appshell" -D"sonar.sources=./src" -D"sonar.host.url=<sq-host-url>" -D"sonar.login=<token>" -D"sonar.exclusions=**/*.test.tsx"`<br>
 
-`sonar-scanner.bat -D"sonar.projectKey=catalog" -D"sonar.sources=./src" -D"sonar.host.url=<sq-host-url>" -D"sonar.login=<token>" -D"sonar.exclusions=**/*.test.tsx" -D"sonar.eslint.reportPaths=store-catalog-mfe-mf\output.json"`<br>
+`sonar-scanner.bat -D"sonar.projectKey=catalog" -D"sonar.sources=./src" -D"sonar.host.url=<sq-host-url>" -D"sonar.login=<token>" -D"sonar.exclusions=**/*.test.tsx"`<br>
 
 `sonar-scanner.bat -D"sonar.projectKey=cart" -D"sonar.sources=./src" -D"sonar.host.url=<sq-host-url>" -D"sonar.login=<token>" -D"sonar.exclusions=**/*.test.tsx"`<br>
 
