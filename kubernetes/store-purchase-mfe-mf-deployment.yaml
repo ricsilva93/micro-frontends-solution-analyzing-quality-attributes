@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: D:\kompose\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: store-purchase-mfe-mf
+  name: store-purchase-mfe-mf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: store-purchase-mfe-mf
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: D:\kompose\kompose.exe convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: store-purchase-mfe-mf
+    spec:
+      containers:
+      - image: ricsilva/mfe-store-purchase-mf
+        imagePullPolicy: ""
+        name: store-purchase-mfe-mf
+        ports:
+        - containerPort: 30004
+        resources: {}
+        stdin: true
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

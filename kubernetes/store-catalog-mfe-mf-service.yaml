@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: D:\kompose\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: store-catalog-mfe-mf
+  name: store-catalog-mfe-mf
+spec:
+  ports:
+  - name: "30000"
+    port: 30000
+    targetPort: 30000
+    nodePort: 30000
+  selector:
+    io.kompose.service: store-catalog-mfe-mf
+  type: NodePort
+status:
+  loadBalancer: {}

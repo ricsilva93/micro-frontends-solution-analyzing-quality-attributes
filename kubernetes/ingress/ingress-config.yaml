@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: storemfe-ingress
+  labels:
+    name: mfe-store
+spec:
+  rules:
+  - host: mfestore.com
+    http:
+      paths:
+      - navbar: Prefix
+        path: "/"
+        backend:
+          service:
+            name: <Service>
+            port: 
+              number: <Port>

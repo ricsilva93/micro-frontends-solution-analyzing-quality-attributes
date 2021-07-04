@@ -1,0 +1,67 @@
+version: "2"
+services:
+  store-app-shell-mf:
+    build:
+      context: ./store-app-shell-mf
+    ports:
+      - "30001:30001"
+    container_name: store-app-shell-mf
+    stdin_open: true
+  store-cart-mfe-mf:
+    build:
+      context: ./store-cart-mfe-mf
+    ports:
+      - "30003:30003"
+    container_name: store-cart-mfe-mf
+    stdin_open: true
+  store-catalog-mfe-mf:
+    build:
+      context: ./store-catalog-mfe-mf
+    ports:
+      - "30000:30000"
+    container_name: store-catalog-mfe-mf
+    stdin_open: true
+  store-navbar-mfe-mf:
+    build:
+      context: ./store-navbar-mfe-mf
+    ports:
+      - "30002:30002"
+    container_name: store-navbar-mfe-mf
+    stdin_open: true
+  store-purchase-mfe-mf:
+    build:
+      context: ./store-purchase-mfe-mf
+    ports:
+      - "30004:30004"
+    container_name: store-purchase-mfe-mf
+    stdin_open: true
+  store-catalog-service:
+    build:
+      context: ./store-catalog-service
+    ports:
+      - "30005:80"
+    container_name: store-catalog-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+    stdin_open: true
+  store-cart-service:
+    build:
+      context: ./store-cart-service
+    ports:
+      - "30006:80"
+    container_name: store-cart-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+    stdin_open: true
+  store-purchases-service:
+    build:
+      context: ./store-purchases-service
+    ports:
+      - "30007:80"
+    container_name: store-purchases-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+    stdin_open: true

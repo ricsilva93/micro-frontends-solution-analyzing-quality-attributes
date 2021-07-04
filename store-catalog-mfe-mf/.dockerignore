@@ -1,0 +1,12 @@
+**/generated
+**/load-test
+**/node_modules
+**/report
+**/.dockerignore
+Dockerfile
+README.md
+.gitignore
+**/yarn.lock
+**/.vs
+**/.vscode
+**/.git

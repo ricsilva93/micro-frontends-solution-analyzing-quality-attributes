@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: D:\kompose\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: store-catalog-service
+  name: store-catalog-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: store-catalog-service
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: D:\kompose\kompose.exe convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: store-catalog-service
+    spec:
+      containers:
+      - env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: ASPNETCORE_URLS
+          value: http://+:80
+        image: ricsilva/mfe-store-catalog-service
+        imagePullPolicy: ""
+        name: store-catalog-service
+        ports:
+        - containerPort: 80
+        resources: {}
+        stdin: true
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

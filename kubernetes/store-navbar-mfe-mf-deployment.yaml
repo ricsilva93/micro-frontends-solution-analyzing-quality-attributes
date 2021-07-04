@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: D:\kompose\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: store-navbar-mfe-mf
+  name: store-navbar-mfe-mf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: store-navbar-mfe-mf
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: D:\kompose\kompose.exe convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: store-navbar-mfe-mf
+    spec:
+      containers:
+      - image: ricsilva/mfe-store-navbar-mf
+        imagePullPolicy: ""
+        name: store-navbar-mfe-mf
+        ports:
+        - containerPort: 30002
+        resources: {}
+        stdin: true
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

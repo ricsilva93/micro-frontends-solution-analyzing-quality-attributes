@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: D:\kompose\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: store-purchases-service
+  name: store-purchases-service
+spec:
+  ports:
+  - name: "30007"
+    port: 30007
+    targetPort: 80
+    nodePort: 30007
+  selector:
+    io.kompose.service: store-purchases-service
+  type: NodePort
+status:
+  loadBalancer: {}
